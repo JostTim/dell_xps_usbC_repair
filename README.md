@@ -24,10 +24,14 @@ All of them have been gathered online, all credit to their authors / providers, 
 The ISL88738 datasheet is quite restrained and lacks proper informations. It seem to be available upon request.
 It is a buck / boost converter that is designed to recieve power from the USB-C powere delivery line, or the battery, feed the battery if need be, and feed the power lines of the computer. That is quite a pivotal chip in the powere line design of the motherboard, hence i suppose it may be the source of the bug, that seem to have impacts over a large set of elements (could also be be a faulty power line that collapses, downstream, like a 5V one for keyboard and USB ports, but then i would't understand why it also affects the charging state of the whole computer.)
 
+### Logic schematic
+
+Both the logic schematic pdf file and the cad circuit board file were obtained from the [BadCaps.net](https://www.badcaps.net/) forum, on [this thread](https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/schematic-requests-only/81147-dell-xps-13-9370-compal-la-e671p-caz60-scheme).
+
 ### CAD file
 - The .cad file (wich is a GenCad file version 1.4) can be opened with the  ``OpenBoardView`` open source viewer, all credit and thanks to the developpers.  
 - The sources for this viewer are available at https://github.com/OpenBoardView/OpenBoardView.  
-- A compiled version for windows32 (version 9.95.1) is provided in the current repository's ``./utilities`` folder.
+- A compiled version for windows32 (version 9.95.1) is provided in the current repository's ``./utilities`` fol der.
 
 ### Solder Pads reparation
 - Using `Wylie Solder Pad Repair Kit`. A video is available [here](https://www.youtube.com/watch?v=MnlAi9IiHt8) showing how to use it. It seems pretty tideous but very reliable in cases that seem to be lost and precious causes. (for ecological repair reasons, cost reasons, or because boards are not manufactured anymore)
@@ -42,12 +46,37 @@ If the component on my motherboard dates from before this change, that could exp
 Available for cheap at [AliExpress](https://fr.aliexpress.com/i/32896388346.html?gatewayAdapt=glo2fra) 
 
 
+### Replacement LA-E671P motherboard
+
+Available for 200 euros at [Aliexpress](https://fr.aliexpress.com/item/1005006002987787.html?spm=a2g0o.productlist.main.27.749cLtDeLtDeS8&algo_pvid=67b03472-11c3-4d06-ad58-83546293aeb9&algo_exp_id=67b03472-11c3-4d06-ad58-83546293aeb9-13&pdp_npi=4%40dis%21EUR%2182.69%2182.69%21%21%2184.10%2184.10%21%40211b61a417353563282152359ebd7b%2112000035266947213%21sea%21FR%210%21ABX&curPageLogUid=VBW9wCv5wXLK&utparam-url=scene%3Asearch%7Cquery_from%3A)
+
+Another option [here](https://fr.aliexpress.com/item/1005005680576024.html?spm=a2g0o.productlist.main.1.171e3d61l9vWy2&algo_pvid=d267c33f-2e7e-4e5e-ab9f-ef13c1ce7d5d&algo_exp_id=d267c33f-2e7e-4e5e-ab9f-ef13c1ce7d5d-0&pdp_npi=4%40dis%21EUR%21120.11%21112.11%21%21%21122.16%21114.02%21%40211b81a317353411380133012e18e3%2112000033991561507%21sea%21FR%210%21ABX&curPageLogUid=ZrUNW27IwgQO&utparam-url=scene%3Asearch%7Cquery_from%3A)
+
+
+[Reparation offer on ebay](https://www.ebay.fr/itm/265759479461?itmmeta=01JG5NYF77NXR9BKY8ZZKRNW3G&hash=item3de07fd6a5:g:aPQAAOSwYQFivVhK), using the provider [SLE-France](https://sle-france.com/), for about 250 euros.
+
 ### Other similar or related cases
 
 - Reported case of USB-C power circuit faulting on another XPS of similar generation : https://www.dell.com/community/en/conversations/xps/dell-xps-15-9570-usb-c-power-circuit-is-a-bad-design-broke-2x-in-6-years/675e0221d3407a439dfbc25c
 
-- Example case of blowns chip for the power line on the motherboard of a similar generation  XPS laptop. The ``ISL88738`` is the chip that is damaged here. : https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/3534980-dell-xps-9570-blown-isl88738-trace-repair 
+- Example case of blowns chip for the power line on the motherboard of a similar generation  XPS laptop. The ``ISL88738`` is the chip that is damaged here : https://www.badcaps.net/forum/troubleshooting-hardware-devices-and-electronics-theory/troubleshooting-laptops-tablets-and-mobile-devices/3534980-dell-xps-9570-blown-isl88738-trace-repair 
 
-- 
+- Example of power cycling after damage has been done to the ISL88738 chip : https://boards.rossmanngroup.com/threads/dell-xps-15-9570-la-g341p-power-cycling-after-liquid-damage-and-blown-isl88738.63197/
 
+- Bios related DisplayPort and USB-C issues : https://www.dell.com/community/en/conversations/xps/xps-13-9300-bios-1010-usb-type-c-to-dp-adapters-no-longer-work/647f887ff4ccf8a8de7ebe2f
 
+- USB-C port disconnecting / high CPU usage : https://www.dell.com/community/en/conversations/xps/usb-device-problems-on-left-usb-c-portcontroller-xps13-9300/647f89faf4ccf8a8de9aee4c
+
+- Issues with power and dock usb-C ports : https://forums.tomshardware.com/threads/strange-usb-device-issue-usb-devices-fall-off-dell-win11-laptop-connected-via-dell-dock.3836198/
+
+- Issues with a usb port not working and disabling powershare in BIOS solves it :https://www.reddit.com/r/Dell/comments/5jl1kt/dell_xps_13_kabylake_9360_right_usb_port_not/
+
+- Usb ports not working after a windows update : (https://www.dell.com/community/en/conversations/xps/xps-13-9370-usb-c-ports-not-working-after-windows-10-updates/647f90f2f4ccf8a8de255760)
+
+### Miscelaneous 
+
+- Dell XPS 13 9370 Light error codes : https://www.dell.com/support/manuals/fr-fr/xps-13-9370-laptop/xps-13-9370-servicemanual/system-diagnostic-lights?guid=guid-f7e24b39-9988-47a8-8c7b-4f85ba0cf5dd&lang=en-us
+
+- Dell XPS 13 9370 replacement back plastic cover for the hinge https://fr.aliexpress.com/item/4001287457095.html?gatewayAdapt=glo2fra
+
+- Kapton Tape (for insulation and high thermal resistance / dissipation)
